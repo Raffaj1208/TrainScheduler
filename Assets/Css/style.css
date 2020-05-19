@@ -1,28 +1,44 @@
+body{
+    background-image: url(../Images/station.jpg);
+}
+
 #jumbotron{
-    background-color:darkgrey;
-    color: black; border: solid;
-    border-color: navy;
+    background-color:navy;
+    color: white; border: solid;
+    border-color:blanchedalmond;
+    font-weight: bolder;
 }
 
 #trainSchedule{
     border: solid; border-color: black;
+    margin-bottom: 10px;
+    background-color: white;
 }
-
-h2{
-    background-color: darkblue; color: white;
-}
-
 nav{
     background-color: navy;
     color:white;
 }
 
 #inputSection{
-    border: solid; border-color: black;
+    border: solid; border-color:navy;
     font-weight: bold;
+    background-color: white;
 }
 
 #submit{
     border: solid; border-color: black;
     background-color: navy; color:white;
 }
+
+h1{
+    border-bottom: inset; border-color:white;
+}
+
+h2{
+    color: navy;
+    border-bottom: inset; border-color: navy;
+}
+
+h3{
+    color: navy;
+    border-bottom: inset; border-color: navy;
