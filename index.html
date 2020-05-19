@@ -9,13 +9,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    <div class="jumbotron">
+    <div class="jumbotron" id="jumbotron">
         <h1 class="display-4">Departures</h1>
         <p class="lead"></p>
         <hr class="my-4">
         <p>Train Departure Times</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-      </div>
+    </div>
 
       <div class="container" id="trainSchedule">
           <h2>Current Train Schedule</h2>
@@ -26,21 +25,30 @@
           </ul>
 
       </div>
-
+      <!--Input Section-->
       <div class="container" id="inputSection">
-          <form>
-              <label>Train Name</label>
-              <input type="text" id="input"><br>
-              <label>Destination</label>
-              <input type="text" id="input"><br>
-              <label>First Train Time</label>
-              <input type="text" id="input"><br>
-              <label>Frequency</label>
-              <input type="text" id="input"><br>
-              <input type="submit" id="submit">
-          </form>
-      </div>
-    
+      <nav>Add Train</nav>
+        <form role="form">
+        <div class="form-group row">
+          <label for="name-input">Train Name:</label>
+          <input class="form-control" id="name-input" type="text">
+        </div>
+        <div class="form-group row">
+          <label for="email-input">Destination:</label>
+          <input class="form-control" id="destination" type="location">
+        </div>
+        <div class="form-group row">
+          <label for="age-input">First Train Time:</label>
+          <input class="form-control" id="time-input" type="time">
+        </div>
+        <div class="form-group row">
+          <label for="comment-input">Frequency</label>
+          <input class="form-control" rows="5" id="number-input"></input>
+        </div>
+        <button class="btn btn-default" id="submit" type="submit">Submit</button>
+      </form>
+    </div>
+
     <script type="text/javascript" src="Assets/Javascript/app.js"></script>
 </body>
 </html>
