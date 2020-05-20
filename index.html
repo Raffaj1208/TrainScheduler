@@ -22,7 +22,8 @@
 			<div class="panel-heading"><h2>Current Train Schedule</h2></div>
 			<div class="panel-body">
 				<table class="table">
-					<thead>
+            
+					<section id="CTSheader">
 						<tr>
 							<th>Train Name</th>
 							<th>Destination</th>
@@ -30,11 +31,19 @@
 							<th>Next Arrival</th>
 							<th>Minutes Away</th>
 						</tr>
-					</thead>
-<!-- Train info goes here! -->
-					<tbody id="add-row">
-					</tbody>
-						</table>
+          </section>
+                      <!-- Train info goes here! -->
+					<section id="listDisplay">
+            <tr>
+             <th id="displayName"></th>
+             <th id="displayDestination"></th>
+             <th id="displayFrequency"></th>
+             <th id="displayNextArrival"></th>
+             <th id="minutesAway"></th>
+             </tr>
+           </section>
+            </table>
+
 			</div>
 		</div>
 

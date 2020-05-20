@@ -42,3 +42,8 @@ h2{
 h3{
     color: navy;
     border-bottom: inset; border-color: navy;
+}
+#listDisplay{
+    background-color: black;
+    color: blanchedalmond;
+}

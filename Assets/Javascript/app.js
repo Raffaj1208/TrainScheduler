@@ -22,4 +22,4 @@ let firebaseConfig = {
   let firstTrain = "please";
   let frequency = 0;
 
-  
+  $("#displayName").html(frequency);
