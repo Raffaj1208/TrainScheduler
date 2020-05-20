@@ -1,3 +1,16 @@
+  //..
+  let name = "SHow";
+  let destination = "yea";
+  let frequency = "please";
+  let nextTrain = 0;
+  let minutesAway = "";
+
+$("#displayName").text(name);
+$("#displayDestination").text(destination);
+$("#displayFrequency").text(frequency);
+$("#displayNextArrival").text(nextTrain);
+$("#minutesAway").text(minutesAway);
+
 //.. Your web app's Firebase configuration
 let firebaseConfig = {
     apiKey: "AIzaSyB7KtHLRHH1j6TP0OT2YiRkVGh_8cyxrrA",
@@ -15,11 +28,3 @@ let firebaseConfig = {
 
   //..
   let dataBase = firebase.database();
-
-  //..
-  let name = "SHow";
-  let destination = "yea";
-  let firstTrain = "please";
-  let frequency = 0;
-
-  $("#displayName").html(frequency);
