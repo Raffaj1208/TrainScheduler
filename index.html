@@ -26,10 +26,9 @@
 					<section id="CTSheader">
 						<tr>
 							<th>Train Name</th>
-							<th>Destination</th>
+              <th>Destination</th>
+              <th>First Train Time</th>
 							<th>Frequency(min)</th>
-							<th>Next Arrival</th>
-							<th>Minutes Away</th>
 						</tr>
           </section>
                       <!-- Train info goes here! -->
@@ -37,9 +36,8 @@
             <tr>
              <td id="displayName"></td>
              <td id="displayDestination"></td>
+             <td id="displayFirstTrain"></td>
              <td id="displayFrequency"></td>
-             <td id="displayNextArrival"></td>
-             <td id="minutesAway"></td>
              </tr>
            </section>
             </table>
@@ -52,22 +50,27 @@
       <div class="container" id="inputSection">
       <h3>Add Train</h3>
         <form role="form">
+          <!--Name-->
         <div class="form-group row">
           <label for="name-input">Train Name:</label>
           <input class="form-control" id="name-input" type="text">
         </div>
+        <!--destination-->
         <div class="form-group row">
           <label for="destination">Destination:</label>
-          <input class="form-control" id="destination" type="location">
+          <input class="form-control" id="destination-input" type="location">
         </div>
+        <!--First Train-->
         <div class="form-group row">
-          <label for="time-input">First Train Time:</label>
-          <input class="form-control" id="time-input" type="time">
+          <label for="firstTrain-input">First Train Time:</label>
+          <input class="form-control" id="firstTrain-input" type="time">
         </div>
+        <!--Frequency-->
         <div class="form-group row">
-          <label for="number-input">Frequency</label>
-          <input class="form-control" rows="5" id="number-input"></input>
+          <label for="frequency-input">Frequency</label>
+          <input class="form-control" id="frequency-input" type="frequency"></input>
         </div>
+        <!--Button-->
         <button class="btn btn-default" id="submit" type="submit">Submit</button>
       </form>
     </div>

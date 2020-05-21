@@ -1,15 +1,29 @@
-  //..
-  let name = "SHow";
-  let destination = "yea";
-  let frequency = "please";
-  let nextTrain = 0;
-  let minutesAway = "";
-
+  //.. Init
+  let name = "testingName";
+  let destination = "testingDest";
+  let FirstTrainTime = "testingTime";
+  let frequency = "testingFreq";
 $("#displayName").text(name);
 $("#displayDestination").text(destination);
 $("#displayFrequency").text(frequency);
-$("#displayNextArrival").text(nextTrain);
-$("#minutesAway").text(minutesAway);
+$("#displayFirstTrain").text(FirstTrainTime);
+
+//.. Function on Submit button CLick
+$("#submit").on("click", function(){
+  event.preventDefault();
+//.. Name ..//
+  name = $("#name-input").val().trim();
+  $("#displayName").text(name);
+  //.. Destination ..//
+  destination = $("#destination-input").val().trim();
+  $("#displayDestination").text(destination);
+  //.. FirstTrain Time..//
+  FirstTrainTime = $("firstTrain-input").val().trim();
+  $("#displayFirstTrain").text(FirstTrainTime);
+  //.. Frequency ..//
+  frequency = $("#frequency-input").val().trim();
+  $("#displayFrequency").text(frequency);
+});
 
 //.. Your web app's Firebase configuration
 let firebaseConfig = {
