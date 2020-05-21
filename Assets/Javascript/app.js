@@ -5,8 +5,8 @@
   let frequency = "testingFreq";
 $("#displayName").text(name);
 $("#displayDestination").text(destination);
-$("#displayFrequency").text(frequency);
 $("#displayFirstTrain").text(FirstTrainTime);
+$("#displayFrequency").text(frequency);
 
 //.. Function on Submit button CLick
 $("#submit").on("click", function(){
@@ -18,11 +18,11 @@ $("#submit").on("click", function(){
   destination = $("#destination-input").val().trim();
   $("#displayDestination").text(destination);
   //.. FirstTrain Time..//
-  FirstTrainTime = $("firstTrain-input").val().trim();
-  $("#displayFirstTrain").text(FirstTrainTime);
+FirstTrainTime = $("#firstTrain-input").val().trim();
+$("#displayFirstTrain").text(FirstTrainTime);
   //.. Frequency ..//
-  frequency = $("#frequency-input").val().trim();
-  $("#displayFrequency").text(frequency);
+frequency = $("#frequency-input").val().trim();
+$("#displayFrequency").text(frequency);
 });
 
 //.. Your web app's Firebase configuration
