@@ -49,7 +49,7 @@ dataAdded: firebase.database.ServerValue.TIMESTAMP
 
 //
 dataRef().on("child_added", function(childSnapshot) {
-  $("#full-member-list").append("<div class='mainDisplay'><td class='infoName'> " +
+  $("#listDisplay").append("<div class='mainDisplay'><td class='infoName'> " +
   childSnapshot.val().name +
   " </td><td class='infoDest'> " + childSnapshot.val().destination +
   " </td><td class='infoFirst'> " + childSnapshot.val().FirstTrainTime +
