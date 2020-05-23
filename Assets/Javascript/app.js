@@ -14,8 +14,8 @@ let firebaseConfig = {
   
   //..
   let dataRef = firebase.database();
-  //
 
+  //
   let name = "testingName";
   let destination = "testingDest";
   let FirstTrainTime = "testingTime";
@@ -47,8 +47,8 @@ dataAdded: firebase.database.ServerValue.TIMESTAMP
 });
 });
 
-//
-dataRef().on("child_added", function(childSnapshot) {
+// Changed this to dataRef.ref().on because dataRef.on is not a function
+dataRef.ref().on("child_added", function(childSnapshot) {
   $("#listDisplay").append("<div class='mainDisplay'><td class='infoName'> " +
   childSnapshot.val().name +
   " </td><td class='infoDest'> " + childSnapshot.val().destination +
@@ -57,8 +57,8 @@ dataRef().on("child_added", function(childSnapshot) {
   " </td></div>");
 
 });
-//..
-database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
+// changed this to dataRef.ref() because database is not declared, I believe you ment dataRef
+dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
 
   $("#displayName").text(snapshot.val().name);
   $("#displayDestination").text(snapshot.val().destination);
