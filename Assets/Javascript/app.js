@@ -58,17 +58,10 @@ dataRef().on("child_added", function(childSnapshot) {
 
 });
 //..
-database.ref().on("child_added", function(snapshot){
-  let snap = snapshot.val();
-  console.log(snap.name);
-  console.log(snap.destination);
-  console.log(snap.FirstTrainTime);
-  console.log(frequency);
+database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
 
-  //..
-  $("#displayName").text(snap.name);
-  $("#displayDestination").text(snap.destination);
-  $("#displayFirstTrain").text(snap.FirstTrainTime);
-  $("#displayFrequency").text(snap.frequency);
-  //
+  $("#displayName").text(snapshot.val().name);
+  $("#displayDestination").text(snapshot.val().destination);
+  $("#displayFirstTrain").text(snapshot.val().FirstTrainTime);
+  $("#displayFrequency").text(snapshot.val().frequency);
 });
