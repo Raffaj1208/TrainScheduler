@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Train Schedule</title>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-database.js"></script>
     <link rel="stylesheet" href="Assets/Css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
+    <script src="https://code.jquery.com/jquery.js"></script>
+  </head>
 <body>
   <!--The Jumbotron-->
     <div class="jumbotron text-center text-white" id="jumbotron">
@@ -32,14 +39,14 @@
 						</tr>
           </section>
                       <!-- Train info goes here! -->
-					<section class="mainDisplay" id="listDisplay">
+					<div class="mainDisplay" id="listDisplay">
             <tr>
-             <td id="displayName"></td>
-             <td id="displayDestination"></td>
-             <td id="displayFirstTrain"></td>
-             <td id="displayFrequency"></td>
+             <td class="infoName" id="displayName"></td>
+             <td class="infoDest" id="displayDestination"></td>
+             <td class="infoFirst" id="displayFirstTrain"></td>
+             <td class="infoFreq" id="displayFrequency"></td>
              </tr>
-           </section>
+					</div>
             </table>
 
 			</div>
@@ -76,14 +83,5 @@
     </div>
 
     <script type="text/javascript" src="Assets/Javascript/app.js"></script>
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
-
-
   </body>
 </html>
