@@ -14,12 +14,12 @@ let firebaseConfig = {
   
   //..
   let dataRef = firebase.database();
-  //
 
-  let name = "testingName";
-  let destination = "testingDest";
-  let FirstTrainTime = "testingTime";
-  let frequency = "testingFreq";
+  //..
+  let name = "";
+  let destination = "";
+  let FirstTrainTime = "";
+  let frequency = "";
   
   //.. Function on Submit button CLick
 $("#submit").on("click", function(){
@@ -45,10 +45,25 @@ FirstTrainTime: FirstTrainTime,
 frequency: frequency,
 dataAdded: firebase.database.ServerValue.TIMESTAMP
 });
-});
 
-//
-dataRef().on("child_added", function(childSnapshot) {
+});
+//..
+dataRef.ref().on("child_added", function(childSnapshot) {
+  
+ //..
+  let newFirstTrain = childSnapshot.val().FirstTrainTime;
+  let newFreq = childSnapshot.val().frequency;
+  let startTimeConverted = moment(newFirstTrain, "hh:mm");
+  let currentTime = moment();
+  let diffTime = moment().diff(moment(startTimeConverted), "minutes");
+  let tRemainder = diffTime % newFreq;
+  let minutesAway = newFreq - tRemainder;
+  let nextTrain = moment().add(minutesAway, "minutes");
+  let catchTrain = moment(nextTrain).format("HH:mm");
+//..
+  $("#displayNextArrival").text(nextTrain);
+  $("#displayMinutesAway").text(minutesAway);
+//..
   $("#listDisplay").append("<div class='mainDisplay'><td class='infoName'> " +
   childSnapshot.val().name +
   " </td><td class='infoDest'> " + childSnapshot.val().destination +
@@ -58,7 +73,7 @@ dataRef().on("child_added", function(childSnapshot) {
 
 });
 //..
-database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
+dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
 
   $("#displayName").text(snapshot.val().name);
   $("#displayDestination").text(snapshot.val().destination);
