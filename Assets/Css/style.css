@@ -43,3 +43,7 @@ h3{
     color: navy;
     border-bottom: inset; border-color: navy;
 }
+
+#container{
+    height: max-content; width: max-content;
+}

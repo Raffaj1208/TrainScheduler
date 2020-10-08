@@ -10,12 +10,12 @@
 <script defer src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
 <script defer src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
 <script defer src="./init-firebase.js"></script>
-    <link rel="stylesheet" href="Assets/Css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+<link rel="stylesheet" href="Assets/Css/style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
 <body>
   <!--The Jumbotron-->
@@ -26,14 +26,15 @@
         <p>Train Departure Times</p>
     </div>
 <!--Schedule Table-->
-      <div class="container" id="trainSchedule">
-          <div class="panel panel-success">
-			<div class="panel-heading"><h2>Current Train Schedule</h2></div>
+    <div id="trainSchedule" class="panel panel-success">
+			<div class="panel-heading">
+        <h2>Current Train Schedule</h2>
+      </div>
 			<div class="panel-body">
-				<table class="table">
+				<table class="container">
             
-					<section id="CTSheader">
-						<tr>
+					<div class="container" id="CTSheader">
+						<tr class="container">
 							<th>Train Name</th>
               <th>Destination</th>
               <th>First Train Time</th>
@@ -41,7 +42,7 @@
               <th>Next Arrival</th>
               <th>Minutes Away</th>
 						</tr>
-          </section>
+					</div>
                       <!-- Train info goes here! -->
 					<div class="mainDisplay" id="listDisplay">
             <tr>
@@ -54,11 +55,8 @@
              </tr>
 					</div>
             </table>
-
-			</div>
 		</div>
-
-      </div>
+</div>
       <!--Input Section-->
       <div class="container" id="inputSection">
       <h3>Add Train</h3>
