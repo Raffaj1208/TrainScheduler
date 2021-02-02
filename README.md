@@ -1,6 +1,6 @@
 # TrainScheduler
-This is the train scheduler..
-Add a train and a destination, add the train's first time and how often the train passes
-The app will give you the time your next train arrives and it will tell you how many minutes away it is
+* This Is thee train scheduler.
+* Use the scheduler to check on your train and plan ahead for your trip.
+* Enter the name of your train, choose a destination
 
 https://raffaj1208.github.io/TrainScheduler/
