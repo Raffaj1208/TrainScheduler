@@ -64,13 +64,14 @@ dataRef.ref().on("child_added", function(childSnapshot) {
   $("#displayNextArrival").text(nextTrain);
   $("#displayMinutesAway").text(minutesAway);
 //..
-  $("#listDisplay").append("<div class='mainDisplay'><td class='infoName'> " +
+  $("#tableBody").append("<tbody><td class='infoName'> " +
   childSnapshot.val().name +
   " </td><td class='infoDest'> " + childSnapshot.val().destination +
   " </td><td class='infoFirst'> " + childSnapshot.val().FirstTrainTime +
   " </td><td class='infoFreq'> " + childSnapshot.val().frequency +
-  " </td></div>");
-
+  " </td><td class='infoNext'>" + childSnapshot.val().nextTrain +
+  " </td><td class='infoMinAw'>" + childSnapshot.val().minutesAway +
+  " </td></tbody>");
 });
 //..
 dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {

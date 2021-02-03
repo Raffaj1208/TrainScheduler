@@ -15,14 +15,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
 <link rel="stylesheet" href="Assets/Css/style.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   </head>
 <body>
   <!--The Jumbotron-->
     <div class="jumbotron text-center text-white" id="jumbotron">
         <h1 class="display-4">Departures</h1>
-        <p class="lead"></p>
-        <hr class="my-4">
         <p>Train Departure Times</p>
     </div>
 <!--Schedule Table-->
@@ -31,31 +31,32 @@
         <h2>Current Train Schedule</h2>
       </div>
 			<div class="panel-body">
-				<table class="container">
-            
-					<div class="container" id="CTSheader">
-						<tr class="container">
-							<th>Train Name</th>
-              <th>Destination</th>
-              <th>First Train Time</th>
-              <th>Frequency(min)</th>
-              <th>Next Arrival</th>
-              <th>Minutes Away</th>
-						</tr>
-          </div>
-  <!-- Train info goes here! -->
-					<div class="mainDisplay" id="listDisplay">
-            <tr>
-             <td class="infoName" id="displayName"></td>
-             <td class="infoDest" id="displayDestination"></td>
-             <td class="infoFirst" id="displayFirstTrain"></td>
-             <td class="infoFreq" id="displayFrequency"></td>
-             <td class="infoNext" id="displayNextArrival"></td>
-             <td class="infoMinAw" id="displayMinutesAway"></td>
-             </tr>
-					</div>
-            </table>
-		</div>
+          <table id="tableBody" class="table table-dark table-striped">
+            <div class="container" id="CTSheader">
+              <thead>
+                <tr>
+                  <th scope="col">Train Name</th>
+                  <th scope="col">Destination</th>
+                  <th scope="col">First Train Starts At</th>
+                  <th scope="col">Frequency</th>
+                  <th scope="col">Next Arrival</th>
+                  <th scope="col">Minutes Away</th>
+                </tr>
+              </thead>
+            </div>
+            <div>
+              <tbody>
+                <tr>
+                  <td class="infoName" id="displayName"></td>
+                  <td class="infoDest" id="displayDestination"></td>
+                  <td class="infoFirst" id="displayFirstTrain"></td>
+                  <td class="infoFreq" id="displayFrequency"></td>
+                  <td class="infoNext" id="displayNextArrival"></td>
+                  <td class="infoMinAw" id="displayMinutesAway"></td>
+                </tr>
+              </tbody>
+            </div>
+          </table>
 </div>
       <!--Input Section-->
       <div class="container" id="inputSection">
@@ -63,17 +64,17 @@
         <form role="form">
           <!--Name-->
         <div class="form-group row">
-          <label for="name-input">Train Name:</label>
+          <label for="name-input">City</label>
           <input class="form-control" id="name-input" type="text">
         </div>
         <!--destination-->
         <div class="form-group row">
-          <label for="destination-input">Destination:</label>
+          <label for="destination-input">Destination</label>
           <input class="form-control" id="destination-input" type="location">
         </div>
         <!--First Train-->
         <div class="form-group row">
-          <label for="firstTrain-input">First Train Time:</label>
+          <label for="firstTrain-input">First Train Time</label>
           <input class="form-control" id="firstTrain-input" type="time">
         </div>
         <!--Frequency-->
@@ -85,7 +86,7 @@
         <button class="btn btn-default" id="submit" type="submit">Submit</button>
       </form>
     </div>
-
+      <div class="mainDisplay" id="listDisplay"></div>
     <script type="text/javascript" src="Assets/Javascript/app.js"></script>
   </body>
 </html>
