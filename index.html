@@ -24,7 +24,7 @@
     <button class="btn btn-outline-success me-2" type="button" id="hide"><a class="navbar-brand" href="./index.html">Home</a></button>
     <button class="btn btn-outline-success me-2" type="button" id="yourInput"><a class="navbar-brand" href="./input.html">Train Schedules</a></button>
   </nav>
-
+   
   <div id="trainSchedule" class="panel panel-success">
     <div class="panel-body">
       <nav class="navbar navbar-dark bg-dark">
@@ -32,59 +32,57 @@
           <span class="navbar-brand mb-0 h1">Most Recent Train</span>
         </div>
       </nav>
-
-  <div class="container" id="CTSheader">
-    <table id="tableBody" class="table table-dark table-striped">
-      <thead>
-        <tr>
-          <th scope="col">Train Name</th>
-          <th scope="col">Destination</th>
-          <th scope="col">First Train Starts At</th>
-          <th scope="col">Frequency</th>
-          <th scope="col">Next Arrival</th>
-          <th scope="col">Minutes Away</th>
-        </tr>
-      </thead>
-    <div>
-      <tbody>
-        <tr>
-          <td class="infoDest" id="displayDestination"></td>
-          <td class="infoName" id="displayName"></td>
-          <td class="infoFirst" id="displayFirstTrain"></td>
-          <td class="infoFreq" id="displayFrequency"></td>
-          <td class="infoNext" id="displayNextArrival"></td>
-          <td class="infoMinAw" id="displayMinutesAway"></td>
-        </tr>
-      </tbody>
+      <table id="tableBody" class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Train Name</th>
+            <th scope="col">Destination</th>
+            <th scope="col">First Train Starts At (24hr MT)</th>
+            <th scope="col">Frequency (mins)</th>
+            <th scope="col">Next Arrival</th>
+            <th scope="col">Minutes Away</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="infoDest" id="displayDestination"></td>
+            <td class="infoName" id="displayName"></td>
+            <td class="infoFirst" id="displayFirstTrain"></td>
+            <td class="infoFreq" id="displayFrequency"></td>
+            <td class="infoNext" id="displayNextArrival"></td>
+            <td class="infoMinAw" id="displayMinutesAway"></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  </table>
-      <!--Input Section-->
-      <div class="container" id="inputSection">
-      <nav id="formNav" class="navbar navbar-dark bg-dark">Update Schedules</nav>
-        <form role="form">
-        <div class="row">
-         <div class="col">
+  </div>
+      
+  <div class="container" id="inputSection">
+    <nav id="formNav" class="navbar navbar-dark bg-dark"><p id="formNavTitle">Update Schedules</p></nav>
+    <form role="form">
+      <div class="row">
+        <div class="col">
           <label for="name-input"></label>
           <input class="form-control" id="name-input" type="text" placeholder="Name Of Train">
-         </div>
-          <div class="col">
-            <label for="destination-input"></label>
-            <input class="form-control" id="destination-input" type="location" placeholder="Train's Destination">
-          </div>
         </div>
-        <div class="row">
-         <div class="col">
+        <div class="col">
+          <label for="destination-input"></label>
+          <input class="form-control" id="destination-input" type="location" placeholder="Train's Destination">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
           <label id="ftd" for="firstTrain-input">First Train Departure</label>
-           <input class="form-control" id="firstTrain-input" type="time">
+          <input class="form-control" id="firstTrain-input" type="time">
         </div>
-          <div class="col">
-            <label for="frequency-input"></label>
-            <input class="form-control" id="frequency-input" type="text" placeholder="Estimated frequency in mins"></input>
-          </div>
+        <div class="col">
+          <label for="frequency-input"></label>
+          <input class="form-control" id="frequency-input" type="text" placeholder="Estimated frequency in mins"></input>
         </div><br>
-        <button class="btn btn-default" id="submit" type="submit">Submit</button>
-      </form>
-
+      </div>
+      <button class="btn btn-default" id="submit" type="submit">Submit</button>
+    </form>
+      
     <script type="text/javascript" src="Assets/Javascript/app.js"></script>
   </body>
 </html>
