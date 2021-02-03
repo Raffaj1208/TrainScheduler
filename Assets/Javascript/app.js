@@ -37,7 +37,6 @@ $("#displayFirstTrain").text(FirstTrainTime);
 frequency = $("#frequency-input").val().trim();
 $("#displayFrequency").text(frequency);
 
-//
 dataRef.ref().push({
 name: name,
 destination: destination,
@@ -47,7 +46,6 @@ dataAdded: firebase.database.ServerValue.TIMESTAMP
 });
 
 });
-//..
 
   dataRef.ref().on("child_added", function(childSnapshot) {
     let newFirstTrain = childSnapshot.val().FirstTrainTime;
@@ -62,7 +60,7 @@ dataAdded: firebase.database.ServerValue.TIMESTAMP
   
     $("#displayNextArrival").text(nextTrain);
     $("#displayMinutesAway").text(minutesAway);
-    $("#tableBody").append("<tbody><td class='infoName'> " +
+    $("#trainScheduleChart").append("<tbody><td class='infoName'> " +
     childSnapshot.val().name +
     " </td><td class='infoDest'> " + childSnapshot.val().destination +
     " </td><td class='infoFirst'> " + childSnapshot.val().FirstTrainTime +
@@ -73,9 +71,10 @@ dataAdded: firebase.database.ServerValue.TIMESTAMP
 
 //..
 dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
-
   $("#displayName").text(snapshot.val().name);
   $("#displayDestination").text(snapshot.val().destination);
   $("#displayFirstTrain").text(snapshot.val().FirstTrainTime);
   $("#displayFrequency").text(snapshot.val().frequency);
+  $("#displayNextArrival").text(nextTrain);
+  $("#displayMinutesAway").text(minutesAway);
 });
