@@ -4,20 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Train Schedule</title>
-<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-database.js"></script>
-<script defer src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
-<script defer src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
-<script defer src="./init-firebase.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
-<link rel="stylesheet" href="Assets/Css/style.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+    <script defer src="./init-firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+    <link rel="stylesheet" href="Assets/Css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   </head>
 <body>
   <nav id="navBar" class="navbar navbar-dark bg-dark">
@@ -25,70 +24,67 @@
     <button class="btn btn-outline-success me-2" type="button" id="hide"><a class="navbar-brand" href="./index.html">Home</a></button>
     <button class="btn btn-outline-success me-2" type="button" id="yourInput"><a class="navbar-brand" href="./input.html">Train Schedules</a></button>
   </nav>
-    <div id="trainSchedule" class="panel panel-success">
-			<div class="panel-body">
-        <nav class="navbar navbar-dark bg-dark">
-          <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">Most Recent Train</span>
-          </div>
-        </nav>
-          <table id="tableBody" class="table table-dark table-striped">
-            <div class="container" id="CTSheader">
-              <thead>
-                <tr>
-                  <th scope="col">Train Name</th>
-                  <th scope="col">Destination</th>
-                  <th scope="col">First Train Starts At</th>
-                  <th scope="col">Frequency</th>
-                  <th scope="col">Next Arrival</th>
-                  <th scope="col">Minutes Away</th>
-                </tr>
-              </thead>
-            </div>
-            <div>
-              <tbody>
-                <tr>
-                  <td class="infoName" id="displayName"></td>
-                  <td class="infoDest" id="displayDestination"></td>
-                  <td class="infoFirst" id="displayFirstTrain"></td>
-                  <td class="infoFreq" id="displayFrequency"></td>
-                  <td class="infoNext" id="displayNextArrival"></td>
-                  <td class="infoMinAw" id="displayMinutesAway"></td>
-                </tr>
-              </tbody>
-            </div>
-          </table>
-</div>
+
+  <div id="trainSchedule" class="panel panel-success">
+    <div class="panel-body">
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">Most Recent Train</span>
+        </div>
+      </nav>
+
+  <div class="container" id="CTSheader">
+    <table id="tableBody" class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Train Name</th>
+          <th scope="col">Destination</th>
+          <th scope="col">First Train Starts At</th>
+          <th scope="col">Frequency</th>
+          <th scope="col">Next Arrival</th>
+          <th scope="col">Minutes Away</th>
+        </tr>
+      </thead>
+    <div>
+      <tbody>
+        <tr>
+          <td class="infoDest" id="displayDestination"></td>
+          <td class="infoName" id="displayName"></td>
+          <td class="infoFirst" id="displayFirstTrain"></td>
+          <td class="infoFreq" id="displayFrequency"></td>
+          <td class="infoNext" id="displayNextArrival"></td>
+          <td class="infoMinAw" id="displayMinutesAway"></td>
+        </tr>
+      </tbody>
+    </div>
+  </table>
       <!--Input Section-->
       <div class="container" id="inputSection">
-      <h3>Add Train</h3>
+      <nav id="formNav" class="navbar navbar-dark bg-dark">Update Schedules</nav>
         <form role="form">
-          <!--Name-->
-        <div class="form-group row">
+        <div class="row">
+         <div class="col">
           <label for="name-input">City</label>
           <input class="form-control" id="name-input" type="text">
+         </div>
+          <div class="col">
+            <label for="destination-input">Destination</label>
+            <input class="form-control" id="destination-input" type="location">
+          </div>
         </div>
-        <!--destination-->
-        <div class="form-group row">
-          <label for="destination-input">Destination</label>
-          <input class="form-control" id="destination-input" type="location">
-        </div>
-        <!--First Train-->
-        <div class="form-group row">
+        <div class="row">
+         <div class="col">
           <label for="firstTrain-input">First Train Time</label>
-          <input class="form-control" id="firstTrain-input" type="time">
+           <input class="form-control" id="firstTrain-input" type="time">
         </div>
-        <!--Frequency-->
-        <div class="form-group row">
-          <label for="frequency-input">Frequency</label>
-          <input class="form-control" id="frequency-input" type="text"></input>
-        </div>
-        <!--Button-->
+          <div class="col">
+            <label for="frequency-input">Frequency</label>
+            <input class="form-control" id="frequency-input" type="text"></input>
+          </div>
+        </div><br>
         <button class="btn btn-default" id="submit" type="submit">Submit</button>
       </form>
-    </div>
-      
+
     <script type="text/javascript" src="Assets/Javascript/app.js"></script>
-    <div class="mainDisplay" id="listDisplay"></div>
   </body>
 </html>

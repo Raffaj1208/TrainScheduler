@@ -75,6 +75,6 @@ dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", functio
   $("#displayDestination").text(snapshot.val().destination);
   $("#displayFirstTrain").text(snapshot.val().FirstTrainTime);
   $("#displayFrequency").text(snapshot.val().frequency);
-  $("#displayNextArrival").text(nextTrain);
+  $("#displayNextArrival").text(snapshot.val);
   $("#displayMinutesAway").text(minutesAway);
 });

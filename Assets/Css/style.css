@@ -2,17 +2,6 @@ body{
     background-image: url(../Images/station.jpg);
 }
 
-#jumbotron{
-    background-color:navy;
-    color: white; border: solid;
-    border-color:blanchedalmond;
-    font-weight: bolder;
-}
-
-#trainSchedule{
-    border: solid; border-color: black;
-    margin-bottom: 10px;
-}
 #navBar{
     color:white;
 }
@@ -20,30 +9,15 @@ body{
     text-align: center;
     margin-left: auto; margin-right: auto;
 }
-
-#inputSection{
-    border: solid; border-color:navy;
-    font-weight: bold;
-    background-color: white;
-}
-
-#submit{
+#submit {
+    text-align: center;
+    padding: 5px;
     border: solid; border-color: black;
     background-color: navy; color:white;
 }
 
-h1{
-    border-bottom: inset; border-color:white;
-}
-
-h2{
-    color: navy;
-    border-bottom: inset; border-color: navy;
-}
-
-h3{
-    color: navy;
-    border-bottom: inset; border-color: navy;
+#formNav{
+    color: white;
 }
 
 #container{
