@@ -12,11 +12,13 @@ body{
 #trainSchedule{
     border: solid; border-color: black;
     margin-bottom: 10px;
-    background-color: white;
 }
-nav{
-    background-color: navy;
+#navBar{
     color:white;
+}
+#navHead {
+    text-align: center;
+    margin-left: auto; margin-right: auto;
 }
 
 #inputSection{

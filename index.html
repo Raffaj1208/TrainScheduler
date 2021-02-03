@@ -20,11 +20,16 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   </head>
 <body>
-  <!--The Jumbotron-->
+  <nav id="navBar" class="navbar navbar-dark bg-dark">
+    <h1 id="navHead">Train Scheduler</h1>
+    <button class="btn btn-outline-success me-2" type="button" id="history">History</button>
+    <button class="btn btn-outline-success me-2" type="button" id="hide">Hide History</button>
+  </nav>
+  <!--The Jumbotron
     <div class="jumbotron text-center text-white" id="jumbotron">
         <h1 class="display-4">Departures</h1>
         <p>Train Departure Times</p>
-    </div>
+    </div> -->
 <!--Schedule Table-->
     <div id="trainSchedule" class="panel panel-success">
 			<div class="panel-heading">
@@ -87,8 +92,6 @@
       </form>
     </div>
       <div class="mainDisplay" id="listDisplay"></div>
-      <button id="history">History</button>
-      <button id="hide">Hide History</button>
     <script type="text/javascript" src="Assets/Javascript/app.js"></script>
   </body>
 </html>
