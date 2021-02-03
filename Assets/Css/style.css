@@ -3,6 +3,7 @@ body{
 }
 
 #navBar{
+    text-align: center;
     color:white;
 }
 #navHead {
@@ -22,4 +23,7 @@ body{
 
 #container{
     height: max-content; width: max-content;
+}
+#ftd {
+    color: white;
 }
