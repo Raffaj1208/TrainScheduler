@@ -31,7 +31,7 @@ $("#submit").on("click", function(){
   destination = $("#destination-input").val().trim();
   $("#displayDestination").text(destination);
   //.. FirstTrain Time..//
-FirstTrainTime = $('#submit').val().trim();
+FirstTrainTime = $('#firstTrain-input').val().trim();
 $("#displayFirstTrain").text(FirstTrainTime);
   //.. Frequency ..//
 frequency = $("#frequency-input").val().trim();
@@ -48,7 +48,7 @@ dataAdded: firebase.database.ServerValue.TIMESTAMP
 
 });
 //..
-$('#history').on('click', function() {
+
   dataRef.ref().on("child_added", function(childSnapshot) {
     let newFirstTrain = childSnapshot.val().FirstTrainTime;
     let newFreq = childSnapshot.val().frequency;
@@ -69,11 +69,8 @@ $('#history').on('click', function() {
     " </td><td class='infoFreq'> " + childSnapshot.val().frequency +
     " </td></tbody>");
   });
-});
 
-$('#hide').on('click', function() {
-  $('#tableBody').hide();
-});
+
 //..
 dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
 

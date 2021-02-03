@@ -23,13 +23,13 @@
   <nav id="navBar" class="navbar navbar-dark bg-dark">
     <h1 id="navHead">Train Scheduler</h1>
     <button class="btn btn-outline-success me-2" type="button" id="hide"><a class="navbar-brand" href="./index.html">Home</a></button>
-    <button class="btn btn-outline-success me-2" type="button" id="yourInput"><a class="navbar-brand" href="./input.html">Train Schedules</a></button>
+    <button id="history" class="btn btn-outline-success me-2" type="button"><a class="navbar-brand" href="./input.html">Train Schedules</a></button>
   </nav>
     <div id="trainSchedule" class="panel panel-success">
 			<div class="panel-body">
         <nav class="navbar navbar-dark bg-dark">
           <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">Most Recent Train</span>
+            <span class="navbar-brand mb-0 h1">Train Schedules</span>
           </div>
         </nav>
           <table id="tableBody" class="table table-dark table-striped">
@@ -59,34 +59,6 @@
             </div>
           </table>
 </div>
-      <!--Input Section-->
-      <div class="container" id="inputSection">
-      <h3>Add Train</h3>
-        <form role="form">
-          <!--Name-->
-        <div class="form-group row">
-          <label for="name-input">City</label>
-          <input class="form-control" id="name-input" type="text">
-        </div>
-        <!--destination-->
-        <div class="form-group row">
-          <label for="destination-input">Destination</label>
-          <input class="form-control" id="destination-input" type="location">
-        </div>
-        <!--First Train-->
-        <div class="form-group row">
-          <label for="firstTrain-input">First Train Time</label>
-          <input class="form-control" id="firstTrain-input" type="time">
-        </div>
-        <!--Frequency-->
-        <div class="form-group row">
-          <label for="frequency-input">Frequency</label>
-          <input class="form-control" id="frequency-input" type="text"></input>
-        </div>
-        <!--Button-->
-        <button class="btn btn-default" id="submit" type="submit">Submit</button>
-      </form>
-    </div>
       
     <script type="text/javascript" src="Assets/Javascript/app.js"></script>
     <div class="mainDisplay" id="listDisplay"></div>
