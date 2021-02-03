@@ -31,7 +31,7 @@ $("#submit").on("click", function(){
   destination = $("#destination-input").val().trim();
   $("#displayDestination").text(destination);
   //.. FirstTrain Time..//
-FirstTrainTime = $("#firstTrain-input").val().trim();
+FirstTrainTime = $('#submit').val().trim();
 $("#displayFirstTrain").text(FirstTrainTime);
   //.. Frequency ..//
 frequency = $("#frequency-input").val().trim();
@@ -48,30 +48,31 @@ dataAdded: firebase.database.ServerValue.TIMESTAMP
 
 });
 //..
-dataRef.ref().on("child_added", function(childSnapshot) {
+$('#history').on('click', function() {
+  dataRef.ref().on("child_added", function(childSnapshot) {
+    let newFirstTrain = childSnapshot.val().FirstTrainTime;
+    let newFreq = childSnapshot.val().frequency;
+    let startTimeConverted = moment(newFirstTrain, "hh:mm");
+    let currentTime = moment();
+    let diffTime = moment().diff(moment(startTimeConverted), "minutes");
+    let tRemainder = diffTime % newFreq;
+    let minutesAway = newFreq - tRemainder;
+    let nextTrain = moment().add(minutesAway, "minutes");
+    let catchTrain = moment(nextTrain).format("HH:mm");
   
- //..
-  let newFirstTrain = childSnapshot.val().FirstTrainTime;
-  let newFreq = childSnapshot.val().frequency;
-  let startTimeConverted = moment(newFirstTrain, "hh:mm");
-  let currentTime = moment();
-  let diffTime = moment().diff(moment(startTimeConverted), "minutes");
-  let tRemainder = diffTime % newFreq;
-  let minutesAway = newFreq - tRemainder;
-  let nextTrain = moment().add(minutesAway, "minutes");
-  let catchTrain = moment(nextTrain).format("HH:mm");
-//..
-  $("#displayNextArrival").text(nextTrain);
-  $("#displayMinutesAway").text(minutesAway);
-//..
-  $("#tableBody").append("<tbody><td class='infoName'> " +
-  childSnapshot.val().name +
-  " </td><td class='infoDest'> " + childSnapshot.val().destination +
-  " </td><td class='infoFirst'> " + childSnapshot.val().FirstTrainTime +
-  " </td><td class='infoFreq'> " + childSnapshot.val().frequency +
-  " </td><td class='infoNext'>" + childSnapshot.val().nextTrain +
-  " </td><td class='infoMinAw'>" + childSnapshot.val().minutesAway +
-  " </td></tbody>");
+    $("#displayNextArrival").text(nextTrain);
+    $("#displayMinutesAway").text(minutesAway);
+    $("#tableBody").append("<tbody><td class='infoName'> " +
+    childSnapshot.val().name +
+    " </td><td class='infoDest'> " + childSnapshot.val().destination +
+    " </td><td class='infoFirst'> " + childSnapshot.val().FirstTrainTime +
+    " </td><td class='infoFreq'> " + childSnapshot.val().frequency +
+    " </td></tbody>");
+  });
+});
+
+$('#hide').on('click', function() {
+  $('#tableBody').hide();
 });
 //..
 dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
